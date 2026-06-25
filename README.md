@@ -147,4 +147,3 @@ For redistributable, manylinux-compatible wheels across many Python versions,
 use [`cibuildwheel`](https://cibuildwheel.readthedocs.io/) in CI. Locally,
 `make wheel` (`uv build --wheel`) builds a wheel into `dist/` for your current
 platform.
-
