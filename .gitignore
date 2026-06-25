@@ -1,0 +1,35 @@
+# Compiled extension modules
+*.so
+*.pyd
+*.dylib
+*.o
+*.obj
+
+# Build artifacts
+build/
+dist/
+wheelhouse/
+*.egg-info/
+.eggs/
+_skbuild/
+CMakeCache.txt
+CMakeFiles/
+
+# uv lockfile — omitted for a reusable template/library so consumers resolve
+# fresh. Commit it instead if you fork this into an application.
+uv.lock
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

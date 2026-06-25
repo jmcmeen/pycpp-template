@@ -1,0 +1,49 @@
+[build-system]
+# pybind11 provides the headers and a helper that builds the C++ extension.
+# setuptools does the actual compiling/packaging. Both are needed at build time.
+requires = ["setuptools>=64", "pybind11>=2.12", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pycpp-template"
+version = "0.1.0"
+description = "A template for writing custom Python modules in C++ with pybind11"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Your Name", email = "you@example.com" }]
+keywords = ["pybind11", "c++", "extension", "template", "native"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: C++",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+# Install with: pip install -e ".[dev]"
+dev = [
+    "pytest>=7.0",
+    "numpy>=1.21",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourname/pycpp_template"
+Issues = "https://github.com/yourname/pycpp_template/issues"
+
+# ---------------------------------------------------------------------------
+# setuptools: where to find the Python package. The compiled extension module
+# is declared in setup.py (it needs imperative code to build the Extension).
+# ---------------------------------------------------------------------------
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pycpp_template = ["py.typed", "*.pyi"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
